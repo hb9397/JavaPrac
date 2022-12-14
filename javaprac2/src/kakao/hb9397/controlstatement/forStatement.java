@@ -22,7 +22,7 @@ public class forStatement {
         for(int i=0; i<=25; i++){
             System.out.println("*");
             if(i%5 == 0){
-                System.out.println();
+                System.out.println("");
             }
         }
     }

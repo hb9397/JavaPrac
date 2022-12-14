@@ -18,5 +18,12 @@ public class forStatement {
             if( i == 3 )
                 break label;
         }
+
+        for(int i=0; i<=25; i++){
+            System.out.println("*");
+            if(i%5 == 0){
+                System.out.println();
+            }
+        }
     }
 }

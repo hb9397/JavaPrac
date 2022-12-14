@@ -16,7 +16,7 @@ public class FormatDisplay {
         System.out.printf("d: %f\n", d);
 
         // 소수 3째 자리까지 반올림 해서 출력
-        System.out.printf("d: %.3f\n");
+        System.out.printf("d: %.3f\n", d);
 
         String name1 = "adam";
         String name2 = "jessica";

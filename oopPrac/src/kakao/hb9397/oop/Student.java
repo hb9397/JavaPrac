@@ -1,6 +1,24 @@
 package kakao.hb9397.oop;
 
 public class Student {
+
+    // static 속성 생성
+    public static String schoolName;
+
+    // static 초기화
+    static {
+        System.out.println("로고 출력");
+        schoolName = "고대부고";
+
+        // static 블럭에서 인스턴스 속성은 사용할 수 없다.
+        //num = 1;
+    }
+
+    public final int x;
+    public Student(){
+        x = 10;
+    }
+
     // 인스턴스 속성 생성
     // 접근 지정자가 public 이므로 외부에서 인스턴스를 통해서 접근해 사용할 수 있다.
 

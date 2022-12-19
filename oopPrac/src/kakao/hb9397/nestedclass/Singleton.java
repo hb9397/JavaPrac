@@ -1,0 +1,17 @@
+package kakao.hb9397.nestedclass;
+
+public class Singleton {
+    // 외부에서 직접 인스턴스를 생성하지 못하도록 생성자의 접근 지정자 변경
+    private Singleton(){}
+
+    // 하나의 인스턴스 참조를 저장하기 위한 속성을 생성한다.
+    private static Singleton singleton;
+
+    // 인스턴스의 참조를 반환하는 메서드
+    public static Singleton sharedInstance(){
+        if(singleton == null){
+            singleton = new Singleton();
+        }
+        return singleton;
+    }
+}

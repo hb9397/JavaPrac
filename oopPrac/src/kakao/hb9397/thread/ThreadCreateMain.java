@@ -1,5 +1,6 @@
 package kakao.hb9397.thread;
 
+// 초급 프로그래밍에서는 써봤자 네트워크를 통해 다운로드 받을 때 정도이며, 바로 시분할 프로그래밍을 하기에는 까다롭다.
 // Thread 클래스로부터 상속받는 클래스, 클래스를 만들면 Static 메모리 영역에 상주하게 되어있다.
 class ThreadEx extends Thread{
 
@@ -28,8 +29,18 @@ public class ThreadCreateMain {
         Runnable r = new Runnable() {
             @Override
             public void run() {
+                // 1초 마다 스레드 이름을 10번 출력하도록 설정
+                for(int i=0; i<10; i++){
+                    try{
+                        Thread.sleep(1000);
+                        System.out.println(i);
+                    } catch(Exception e){
 
+                    }
+                }
             }
         };
+        Thread th2 = new Thread(r);
+        th2.start();
     }
 }

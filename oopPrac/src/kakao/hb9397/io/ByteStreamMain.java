@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class ByteStreamMain {
     public static void main(String[] args){
         // 파일에 바이트 단위로 기록한다.
-        // Java 8 부터는 람다식과 try ~ catch 문에서 아래의 내용 -> try with resource 문이 가능하다
+        // Java 8 부터는 람다식과 try ~ catch 문에서 아래의 내용 -> try with resource 이 가능하다
         // ( ) 안에서 close() 가 필요한 인스턴스를 생성하면 다시 close를 선언하지 않아도 된다.
         // try ~ catch 블럭 밖에 선언하면 레거시 해지기 때문이고, try 절 안에서 생성하면 catch 절에서 사용할 수 없다.
 

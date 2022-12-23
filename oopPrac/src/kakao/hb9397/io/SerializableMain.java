@@ -15,7 +15,7 @@ public class SerializableMain {
         }
 
         // 인스턴스 단위로 읽을수 있는 스트림 생성
-        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("sample.dat"))){
+        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("sample.dat;'?>"))){
             // 기록된 인스턴스 읽어오기
             // retur type Ojbect
             Data data = (Data)ois.readObject();

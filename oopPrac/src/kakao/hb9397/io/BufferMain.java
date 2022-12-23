@@ -53,8 +53,10 @@ public class BufferMain {
             while(true){
                 // 16 바이트 단위로 읽어오기
                 // 웹에서 1024 비트 약 128 바이트의 패킷으로 통신하기 때문에 일반적으로는 128 또는 128의 배수를 많이 사용한다.
-                byte [] b = new byte[1024];
+                // byte [] b = new byte[16];
 
+                // 버퍼의 출력단위가 매우 큰 경우
+                byte [] b = new byte[1024];
                 int len = bis.read(b, 0, b.length);
                 if(len <= 0){
                     break;

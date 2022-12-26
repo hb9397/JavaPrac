@@ -19,8 +19,8 @@ public class UDPServer {
                 // 클라이언트 정보 확인
                 System.out.println(datagramPacket.getAddress());
 
-                // 받은 msg 출력
-                System.out.println(new String(datagramPacket.getData()));
+                // 받은 msg 출력하는데 바이트 배열을 문자열로 바꾸기 때문에 공백을 제거해준다.
+                System.out.println(new String(datagramPacket.getData()).trim());
             }
 
             // UDP는 연결할 소켓 없이 받아오는 DatagramSocket 만 있으면 된다.

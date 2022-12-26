@@ -1,5 +1,6 @@
 package kakao.hb9397.network;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -36,6 +37,13 @@ public class ImageDownload {
 
                     // 읽은 내용을 저장할 파일 스트림을 생성한다.
                     FileOutputStream fileOutputStream = new FileOutputStream("Dolphin." + ext);
+
+                    // 파일이 이미 있는 경우에 대해서 처리
+                    File file = new File("Dolphin." + ext);
+                    if(file.exists()){
+                        System.out.println("이미 존재하는 파일 입니다.");
+                        return;
+                    }
 
                     while (true) {
                         // 데이터를 저장할 Byte 배열 생성

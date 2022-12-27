@@ -1,6 +1,6 @@
 package org.example;
 
-public class Main {
+public class StartMavenMain {
     public static void main(String[] args) {
         // MySQL 드라이버 로딩
         try{

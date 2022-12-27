@@ -26,7 +26,9 @@ public class ImageDownload {
                     // 다운로드 할 이미지 경로 URL 인스턴스 생성
                     URL url = new URL(addr);
 
-                    // url 인스턴스를 연결할 인스턴스 생성을 하는데 URL이 HttpURLConnection 클래스의 하위 클래스이기 때문에 형 변환해서 사용한다.
+                    // url 인스턴스를 연결할 인스턴스 생성을 하는데 HttpURLConnection 이 URL 클래스의 하위 클래스이기 때문에 형 변환해서 사용한다.
+                    // 상위 클래스의 요소들을 그대로 가지고 내려와서 사용할 수 있기 때문에, 반대의 경우는 불가능
+                    // 하위 클래스의 더 많은 요소들은 상위 클래스에 정의 되어있지 않기 때문.
                     HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                     urlConnection.setRequestMethod("GET");
                     urlConnection.setConnectTimeout(30000);

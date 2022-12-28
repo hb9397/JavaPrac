@@ -16,5 +16,8 @@ public interface GoodDAO {
     // goods 테이블에 데이터 삽입하기
     // 수정은 모양이 동일하다
     // 삭제는 동일하게 만들어도 되고 매개변수를 기본키로 만들어도 된다.
-    public int insertGood(GoodDTO good);
+    public int insertGoodDTO(GoodDTO good);
+
+    // goods 테이블에서 name이나 manufacture에 포함된 데이터 조회
+    public List<GoodDTO> likeGoodDTO(String content);
 }

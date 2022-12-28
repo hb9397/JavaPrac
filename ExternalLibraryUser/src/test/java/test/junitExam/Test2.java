@@ -17,6 +17,6 @@ public class Test2 {
         int result = source.add(100, 200);
 
         // 기대값 결과값 비교 -> 일치하면 정상 수행 일치하지 않으면 예외 발생
-        Assert.assertEquals(result, 500);
+        Assert.assertEquals(result, 300);
     }
 }

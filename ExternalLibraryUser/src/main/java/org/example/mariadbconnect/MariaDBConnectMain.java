@@ -1,30 +1,55 @@
 package org.example.mariadbconnect;
 
-import org.mariadb.jdbc.Driver;
-
+import java.io.File;
+import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.Properties;
+import java.util.stream.Collectors;
 
 public class MariaDBConnectMain {
     public static void main(String[] args) {
-        // 1. DB 드라이버 로드
-        // 드라이버 의존성을 설정하지 않거나 클래스 이름이 틀리면 얘외가 발생한다.
-        try{
-            Class.forName("org.mariadb.jdbc.Driver");
+        // 데이터베이스 접속에 필요한 정보 불러오기
+        String driver = null;
+        String url = null;
+        String id = null;
+        String password = null;
+
+        // 읽어올 파일 인스턴스 생성
+        File file = new File("./db.properties");
+
+        try(FileInputStream fileInputStream = new FileInputStream(file)){
+
+            // 파일의 내용을 properties에 저장
+            Properties properties = new Properties();
+            properties.load(fileInputStream);
+
+            // 읽어온 내용을 변수에 저장
+            driver = properties.getProperty("driver");
+            url = properties.getProperty("url");
+            id = properties.getProperty("id");
+            password = properties.getProperty("password");
+
+        } catch (Exception e){
+            System.out.println(e.getLocalizedMessage());
+        }
+
+        // 1. 데이터베이스 드라이버 로드
+        // 드라이버 의존성을 설정하지 않거나 클래스 이름이 틀리면
+        // 예외 발생
+        try {
+            Class.forName(driver);
             System.out.println("드라이버 로드 성공");
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getLocalizedMessage());
             e.printStackTrace();
         }
 
-        // 2. DB 접속 - java.sql.Connection
-        try(Connection connection =
-                    DriverManager.getConnection(
-                                    "jdbc:mariadb://127.0.0.1:3306", "root", "8236"))
-        {
-            System.out.println(connection);
+        // 2. 데이터베이스 접속 - java.sql.Connection
+        try (Connection con = DriverManager.getConnection(url, id, password)){
+            System.out.println(con);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getLocalizedMessage());
             e.printStackTrace();
         }

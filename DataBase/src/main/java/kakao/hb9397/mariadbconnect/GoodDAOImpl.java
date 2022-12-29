@@ -41,7 +41,7 @@ public class GoodDAOImpl implements GoodDAO {
 
     }
     // 초기화 - 생성자를 호출할 때 마다 먼저 호출됨.
-    // 이 영역은 init 이라는 메서드로 생성
+    // 이 영역은l
     // 모든 속성 사용이 가능
     // 드라이버 MariaDB에 연결
     {

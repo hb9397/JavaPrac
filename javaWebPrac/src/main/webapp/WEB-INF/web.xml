@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+    <display-name>javaweb</display-name>
+    <welcome-file-list> <!-- 시작(entry point) 파일을 모아놓는 list tag-->
+        <welcome-file> <!-- 각각의 entry point 파일(.jsp) -->
+            index.jsp
+        </welcome-file>
+        <welcome-file>
+            sample.jsp
+        </welcome-file>
+    </welcome-file-list>
+
+    <context-param><!-- 초기화 파라미터를 아래와 같이 Key Value 로 설정할 수 있으며 읽어낼 수 있도록(application(서버에서) 설정한 것.-->
+        <param-name>User</param-name>
+        <param-value>System</param-value>
+    </context-param>
+
+</web-app>

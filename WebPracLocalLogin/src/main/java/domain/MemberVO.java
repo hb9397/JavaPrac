@@ -4,15 +4,25 @@ public class MemberVO {
     private String mid;
     private String mpw;
     private String mname;
+    private String uuid;
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
     public MemberVO() {
         super();
     }
 
-    public MemberVO(String mid, String mpw, String mname) {
+    public MemberVO(String mid, String mpw, String mname, String uuid) {
         this.mid = mid;
         this.mpw = mpw;
         this.mname = mname;
+        this.uuid = uuid;
     }
 
     public String getMid() {

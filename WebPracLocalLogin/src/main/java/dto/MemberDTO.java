@@ -3,17 +3,29 @@ package dto;
 public class MemberDTO {
     private String mid;
     private String mpw;
-    public String  mname;
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    private String mname;
+    private String uuid;
 
     public MemberDTO() {
         super();
     }
 
-    public MemberDTO(String mid, String mpw, String mname) {
+    public MemberDTO(String mid, String mpw, String mname, String uuid) {
         this.mid = mid;
         this.mpw = mpw;
         this.mname = mname;
+        this.uuid = uuid;
     }
+
 
     public String getMid() {
         return mid;

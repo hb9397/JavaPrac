@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class BufferMain {
     public static void main(String[] args){
         // 버퍼 단위로 기록
-        try(PrintStream ps = new PrintStream(new FileOutputStream("C:\\Users\\user\\Documents\\BufferTest.txt", true))){
+        try(PrintStream ps = new PrintStream(new FileOutputStream("C:\\Users\\hb939\\OneDrive\\문서\\BufferTest.txt", true))){
             String msg = "안녕하세요 버퍼 스트림";
 
             // write 바이트 단위 기록
@@ -23,7 +23,7 @@ public class BufferMain {
         }
 
         // 버퍼 단위로 읽기
-        try(BufferedInputStream bis = new BufferedInputStream(new FileInputStream("C:\\Users\\user\\Documents\\BufferTest.txt"))){
+        try(BufferedInputStream bis = new BufferedInputStream(new FileInputStream("C:\\Users\\hb939\\OneDrive\\문서\\BufferTest.txt"))){
             /*while(true){
                 // 파일에서 읽을 수 있는 크기로 바이트 배열을 생성한다.
                 byte [] b = new byte[bis.available()];
